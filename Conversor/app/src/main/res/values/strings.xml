@@ -1,6 +1,82 @@
 <resources>
     <string name="app_name">Measurements Converter</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="acerca">Acerca de</string>
     <string-array name="select">
         <item>Seleccionar</item>
+    </string-array>
+    
+    <string-array name="temp">
+        <item>Seleccionar</item>
+        <item>Centigrados > Farenheit</item>
+        <item>Farenheit > Centigrados</item>
+    </string-array>
+
+    <string-array name="longi">
+        <item>Seleccionar</item>
+        <item>Metros > Yardas</item>
+        <item>Yardas > Metros</item>
+        <item>Kilometros > Millas</item>
+        <item>Millas > Kilometros</item>
+    </string-array>
+
+    <string-array name="vol">
+        <item>Seleccionar</item>
+        <item>Litros > Galones (US)</item>
+        <item>Galones (US) > Litros</item>
+    </string-array>
+
+    <string-array name="acel">
+        <item>Seleccionar</item>
+        <item>KM/H > Millas/H</item>
+        <item>Millas/H > KM/H</item>
+    </string-array>
+
+    <string-array name="peso">
+        <item>Seleccionar</item>
+        <item>Kilos > Libras</item>
+        <item>Libras > Kilos</item>
+        <item>Gramos > Onzas</item>
+        <item>Onzas > Gramos</item>
+    </string-array>
+
+    <string-array name="area">
+        <item>Seleccionar</item>
+        <item>Metros Cuadrados > Hectáreas</item>
+        <item>Hectáreas > Metros Cuadrados</item>
+    </string-array>
+    
+    <string name="origen">Origen</string>
+    <string name="destino">Destino</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="longitud">Longitud</string>
+    <string name="volumen">Volumen</string>
+    <string name="aceleracion">Aceleración</string>
+    <string name="peso">Peso</string>
+    <string name="area">Área</string>
+    <string name="convertir">CONVERTIR</string>
+    <string name="limpiar">LIMPIAR</string>
+    <string name="informacion">"Aplicación creada como parte de una actividad escolar, la función de la aplicación es convertir cualquier cantidad ingresada a la unidad de medida seleccionada.  \n\n<u><b>DESARROLLADORES:</b></u>  \n\n-Alvaro Terrones Cano  \n\n-Roberto García Martínez "</string>
+    <string name="idioma">Idioma</string>
+    <string name="decimales">Cantidad de decimales</string>
+    <string name="temas">Tema</string>
+
+    <string-array name="idiomas">
+        <item>Seleccionar</item>
+        <item>español</item>
+        <item>inglés</item>
+        <item>francés</item>
+        <item>alemán</item>
+    </string-array>
+
+    <string-array name="decimales">
+        <item>Seleccionar</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="colores">
+        <item>Tema1</item>
     </string-array>
 </resources>

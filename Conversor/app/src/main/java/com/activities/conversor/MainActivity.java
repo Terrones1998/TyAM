@@ -1,82 +1,59 @@
 package com.activities.conversor;
 
+import android.content.Intent;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
-
+import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
         Spinner spinner0 = findViewById(R.id.my_spinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getApplicationContext(),R.array.select,android.R.layout.simple_spinner_dropdown_item);
         spinner0.setAdapter(adapter);
 
-        List<String> temperatura = new ArrayList<>();
-        temperatura.add("Seleccionar");
-        temperatura.add("Centigrados > Farenheit");
-        temperatura.add("Farenheit > Centigrados");
-
-        List<String> longitud = new ArrayList<>();
-        longitud.add("Seleccionar");
-        longitud.add("Metros > Yardas");
-        longitud.add("Yardas > Metros");
-        longitud.add("Kilometros > Millas");
-        longitud.add("Millas > Kilometros");
-
-        List<String> volumen = new ArrayList<>();
-        volumen.add("Seleccionar");
-        volumen.add("Litros > Galones (US)");
-        volumen.add("Galones (US) > Litros");
-
-        List<String> aceleracion = new ArrayList<>();
-        aceleracion.add("Seleccionar");
-        aceleracion.add("KM/H > Millas/H");
-        aceleracion.add("Millas/H > KM/H");
-
-        List<String> peso = new ArrayList<>();
-        peso.add("Seleccionar");
-        peso.add("Kilos > Libras");
-        peso.add("Libras > Kilos");
-        peso.add("Gramos > Onzas");
-        peso.add("Onzas > Gramos");
-
-        List<String> area = new ArrayList<>();
-        area.add("Seleccionar");
-        area.add("Metros Cuadrados > Hectáreas");
-        area.add("Hectáreas > Metros Cuadrados");
 
         final EditText editText = findViewById(R.id.edt_destino);
         editText.setEnabled(false);
 
         RadioGroup radioGroup = findViewById(R.id.rg_medidas);
 
-        final ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, temperatura);
+        final ArrayAdapter a = ArrayAdapter.createFromResource(getApplicationContext(),R.array.temp,android.R.layout.simple_spinner_dropdown_item);
 
-        final ArrayAdapter<String> b = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, longitud);
+        final ArrayAdapter b = ArrayAdapter.createFromResource(getApplicationContext(),R.array.longi,android.R.layout.simple_spinner_dropdown_item);
 
-        final ArrayAdapter<String> c = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, volumen);
+        final ArrayAdapter c = ArrayAdapter.createFromResource(getApplicationContext(),R.array.vol,android.R.layout.simple_spinner_dropdown_item);
 
-        final ArrayAdapter<String> d = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, aceleracion);
+        final ArrayAdapter d = ArrayAdapter.createFromResource(getApplicationContext(),R.array.acel,android.R.layout.simple_spinner_dropdown_item);
 
-        final ArrayAdapter<String> e = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, peso);
+        final ArrayAdapter e = ArrayAdapter.createFromResource(getApplicationContext(),R.array.peso,android.R.layout.simple_spinner_dropdown_item);
 
-        final ArrayAdapter<String> f = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, area);
+        final ArrayAdapter f = ArrayAdapter.createFromResource(getApplicationContext(),R.array.area,android.R.layout.simple_spinner_dropdown_item);
 
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -236,5 +213,33 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater ().inflate (R.menu.main, menu);
+        return super.onCreateOptionsMenu (menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected (@NonNull MenuItem item) {
+        switch (item.getItemId ()) {
+            case R.id.item1:
+                Toast option = Toast.makeText(getApplicationContext(),R.string.ajustes, Toast.LENGTH_SHORT);
+                option.setGravity(Gravity.CENTER_HORIZONTAL,0,500);
+                option.show();
+                Intent intent = new Intent (getBaseContext (), SecondActivity.class);
+                startActivity (intent);
+                break;
 
+            case R.id.item2:
+                option = Toast.makeText(getApplicationContext(),R.string.acerca, Toast.LENGTH_SHORT);
+                option.setGravity(Gravity.CENTER_HORIZONTAL,0,500);
+                option.show();
+                intent = new Intent (getBaseContext (), ThirdActivity.class);
+                startActivity (intent);
+                break;
+
+        }
+
+        return super.onOptionsItemSelected (item);
+    }
 }
+

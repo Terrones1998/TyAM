@@ -5,13 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include layout="@layout/header_layout" />
+
     <TableLayout
         android:id="@+id/edit_texts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="50dp">
 
         <TableRow>
 
@@ -19,7 +21,7 @@
                 android:id="@+id/edt_origen"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:hint="Origen"
+                android:hint="@string/origen"
                 android:inputType="numberDecimal"
                 android:textSize="36sp" />
 
@@ -27,7 +29,8 @@
                 android:id="@+id/edt_destino"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:hint="Destino"
+                android:hint="@string/destino"
+                android:maxLength="8"
                 android:inputType="none"
                 android:textSize="36sp"
                 android:layout_marginStart="35dp"/>
@@ -50,13 +53,13 @@
             android:id="@+id/temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Temperatura" />
+            android:text="@string/temperatura" />
 
         <RadioButton
             android:id="@+id/longi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Longitud"
+            android:text="@string/longitud"
             android:layout_marginStart="130dp"
             android:layout_marginTop="-30dp"/>
 
@@ -64,7 +67,7 @@
             android:id="@+id/vol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volumen"
+            android:text="@string/volumen"
             android:layout_marginStart="250dp"
             android:layout_marginTop="-30dp"/>
 
@@ -73,14 +76,14 @@
             android:id="@+id/acel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Aceleración" />
+            android:text="@string/aceleracion" />
 
 
         <RadioButton
             android:id="@+id/peso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Peso"
+            android:text="@string/peso"
             android:layout_marginStart="130dp"
             android:layout_marginTop="-30dp"/>
 
@@ -88,7 +91,7 @@
             android:id="@+id/area"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Área"
+            android:text="@string/area"
             android:layout_marginStart="250dp"
             android:layout_marginTop="-30dp"/>
 
@@ -99,11 +102,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/rg_medidas"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginBottom="150dp"
-        android:spinnerMode="dropdown" />
+        android:layout_marginTop="100dp"
+        android:layout_alignParentEnd="true"/>
+
 
     <TableLayout
         android:layout_width="match_parent"
@@ -118,14 +119,14 @@
                 android:id="@+id/bt_convertir"
                 android:layout_width="160dp"
                 android:layout_height="60dp"
-                android:text="CONVERTIR" />
+                android:text="@string/convertir" />
 
             <Button
                 android:id="@+id/bt_limpiar"
                 android:layout_width="160dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="100dp"
-                android:text="LIMPIAR" />
+                android:text="@string/limpiar"/>
         </TableRow>
     </TableLayout>
 

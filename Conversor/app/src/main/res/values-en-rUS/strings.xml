@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Measurements Converter</string>
+    <string name="area">Area</string>
+    <string name="convertir">CONVERT</string>
+    <string name="limpiar">CLEAR</string>
+    <string name="origen">Source</string>
+    <string name="aceleracion">Acceleration</string>
+    <string name="destino">Destination</string>
+    <string name="longitud">Lenght</string>
+    <string name="peso">Weight</string>
+    <string name="temperatura">Temperature</string>
+    <string name="volumen">Volumen</string>
+    <string name="acerca">About</string>
+    <string name="ajustes">Settings</string>
+    <string name="decimales">Number of decimals</string>
+    <string name="idioma">Languaje</string>
+    <string name="informacion">Application created as part of a school activity, the function of the application is to convert any amount entered to the selected unit of measure. \n\n<u><b>DEVELOPERS:</b></u> \n\n-Alvaro Terrones Cano \n\n-Roberto García Martínez</string>
+    <string name="temas">Theme</string>
+</resources>
