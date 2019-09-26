@@ -1,6 +1,8 @@
 package com.activities.conversor;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -101,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
 
                 EditText edtOrigen = findViewById(R.id.edt_origen);
                 EditText edtDestino = findViewById(R.id.edt_destino);
+
+                SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
+                edtOrigen.setText(preferences.getString("valor","" ));
 
                 Spinner op = findViewById(R.id.my_spinner);
                 String med = op.getSelectedItem().toString();
@@ -218,6 +224,17 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater ().inflate (R.menu.main, menu);
         return super.onCreateOptionsMenu (menu);
     }
+    protected void onResume () {
+        super.onResume();
+        EditText edtOrigen = findViewById(R.id.edt_origen);
+        SharedPreferences preferences =getSharedPreferences("datos",Context.MODE_PRIVATE);
+        SharedPreferences.Editor obj_editor = preferences.edit();
+        obj_editor.putString("datos",edtOrigen.getText().toString());
+        obj_editor.commit();
+    }
+
+
+
     @Override
     public boolean onOptionsItemSelected (@NonNull MenuItem item) {
         switch (item.getItemId ()) {
